@@ -1,0 +1,16 @@
+<h1>Result</h1>
+
+<h2>
+  <% if params[:word].upcase.split("").index{ |x| !@letters.split("").include?(x) }.nil? == false %>
+  <%= "Sorry but TEST cannot built out of #{@letters}" %>
+
+    <% elsif @isValidWord == false %>
+    <%= "Sorry but #{params[:word].upcase} does not seem to be a valid English word..." %>
+
+  <% else %>
+  <%= "Congratulations! #{params[:word].upcase} is a valid English word!" %>
+  <% end %>
+
+</h2>
+<%= link_to "Play again", new_path %>
+
